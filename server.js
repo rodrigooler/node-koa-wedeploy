@@ -1,8 +1,12 @@
+const http = require('uws').http;
 const Koa = require('koa');
+
 const app = new Koa();
 
-app.use(async ctx => {
-  ctx.body = 'Hello Worl2d  sadhasuhd';
+app.use(ctx => {
+  if (ctx.req.url !== '/keep-alive') ctx.set('Connection', 'close');
+
+  ctx.body = 'Hello World!';
 });
 
-app.listen(3000);
+http.createServer(app.callback()).listen(3000);
