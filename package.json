@@ -9,15 +9,25 @@
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "nodemon": "^1.12.1"
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "nodemon": "^1.12.1",
+    "prettier": "^1.8.2"
   },
   "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote true --trailing-comma all --print-width 80",
+      "git add"
+    ]
+  },
   "main": "server.js",
   "private": false,
   "repository": "git@github.com:rodrigooler/node-koa-wedeploy.git",
   "scripts": {
     "dev": "echo 'run dev' & npm start",
     "nodemon": "./node_modules/nodemon/bin/nodemon.js --config nodemon.json --exec npm run dev ",
+    "precommit": "lint-staged",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
