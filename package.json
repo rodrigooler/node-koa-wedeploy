@@ -3,14 +3,20 @@
   "description": "Back-end Node + KOA 2 Sample to deploy in We Deploy Edit",
   "version": "0.1.0",
   "author": "Rodrigo Oler <roodrigoprogrammer@gmail.com>",
-  "license": "MIT",
-  "main": "server.js",
-  "private": false,
-  "repository": "git@github.com:rodrigooler/node-koa-wedeploy.git",
   "dependencies": {
     "koa": "^2.4.1"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
+  },
+  "license": "MIT",
+  "main": "server.js",
+  "private": false,
+  "repository": "git@github.com:rodrigooler/node-koa-wedeploy.git",
+  "scripts": {
+    "dev": "echo 'run dev' & npm start",
+    "nodemon": "./node_modules/nodemon/bin/nodemon.js --config nodemon.json --exec npm run dev ",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
