@@ -25,8 +25,7 @@
   "private": false,
   "repository": "git@github.com:rodrigooler/node-koa-wedeploy.git",
   "scripts": {
-    "dev": "echo 'run dev' & npm start",
-    "nodemon": "./node_modules/nodemon/bin/nodemon.js --config nodemon.json --exec npm run dev ",
+    "dev": "./node_modules/nodemon/bin/nodemon.js server.js ",
     "precommit": "lint-staged",
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
